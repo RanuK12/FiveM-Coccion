@@ -1,0 +1,24 @@
+{
+    "cooking": {
+        "title": "Sistema de Cocina",
+        "start_cooking": "Comenzar a Cocinar",
+        "stop_cooking": "Dejar de Cocinar",
+        "recipe": "Receta",
+        "ingredients": "Ingredientes",
+        "level_required": "Nivel Requerido",
+        "current_level": "Nivel Actual",
+        "experience": "Experiencia",
+        "not_enough_level": "¡No tienes suficiente nivel para cocinar esto!",
+        "cooking_started": "¡Cocinando iniciada...",
+        "cooking_completed": "¡Cocinación completada!",
+        "cooking_failed": "¡Falló la cocinación!",
+        "inventory_full": "¡Tu inventario está lleno!",
+        "item_added": "¡Artículo añadido al inventario!",
+        "no_ingredients": "¡No tienes todos los ingredientes necesarios!"
+    },
+    "menu": {
+        "title": "Menú de Cocina",
+        "close": "Cerrar",
+        "cook": "Cocinar"
+    }
+}

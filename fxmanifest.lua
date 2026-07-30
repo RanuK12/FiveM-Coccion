@@ -11,6 +11,7 @@ shared_scripts {
     'config.lua',
     'locales/en.json',
     'locales/es.json',
+    'shared/main.lua',
 }
 
 client_scripts {

@@ -1,0 +1,24 @@
+{
+    "cooking": {
+        "title": "Cooking System",
+        "start_cooking": "Start Cooking",
+        "stop_cooking": "Stop Cooking",
+        "recipe": "Recipe",
+        "ingredients": "Ingredients",
+        "level_required": "Level Required",
+        "current_level": "Current Level",
+        "experience": "Experience",
+        "not_enough_level": "You don't have enough level to cook this!",
+        "cooking_started": "Cooking started...",
+        "cooking_completed": "Cooking completed!",
+        "cooking_failed": "Cooking failed!",
+        "inventory_full": "Your inventory is full!",
+        "item_added": "Item added to inventory!",
+        "no_ingredients": "You don't have all the required ingredients!"
+    },
+    "menu": {
+        "title": "Cooking Menu",
+        "close": "Close",
+        "cook": "Cook"
+    }
+}
