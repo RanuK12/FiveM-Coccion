@@ -16,8 +16,11 @@ shared_scripts {
 
 client_scripts {
     'client/main.lua',
+    'client/visuals.lua',
 }
 
 server_scripts {
     'server/main.lua',
+    'server/anticheat.lua',
+    'server/webhook.lua',
 }
