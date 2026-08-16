@@ -1,0 +1,129 @@
+# Tebex Configuration for FiveM-Coccion
+# Archivo de configuración para publicación en Tebex
+
+name: "FiveM-Coccion - Sistema de Cocina Profesional"
+description: "FiveM resource premium para sistema de cocina avanzado con soporte multi-framework (ESX y QB-Core), diseñado para servidores RolePlay que buscan inmersión y realismo en sus experiencias culinarias."
+
+# Pricing tiers
+pricing:
+  - id: "standard"
+    name: "Licencia Estándar"
+    price: 15
+    description: "Para un solo servidor con soporte básico"
+    features:
+      - Uso en un solo servidor
+      - Soporte básico
+      - Actualizaciones menores por 3 meses
+      - Acceso a la documentación
+      
+  - id: "premium"
+    name: "Licencia Premium"
+    price: 30
+    description: "Para hasta 3 servidores con soporte prioritario"
+    features:
+      - Uso en hasta 3 servidores
+      - Soporte prioritario
+      - Actualizaciones por 1 año
+      - Acceso anticipado a nuevas características
+      - Personalización básica incluida
+      
+  - id: "enterprise"
+    name: "Licencia Empresarial"
+    price: 60
+    description: "Para servidores ilimitados con soporte 24/7"
+    features:
+      - Uso en servidores ilimitados
+      - Soporte 24/7 prioritario
+      - Actualizaciones de por vida
+      - Personalización completa
+      - Implementación personalizada
+      - Consultoría gratuita
+
+# Assets to include
+assets:
+  - name: "FiveM-Coccion"
+    type: "directory"
+    path: "."
+    
+# Screenshots (these would be actual image files in a real deployment)
+screenshots:
+  - description: "Menú de Cocina - Interfaz intuitiva"
+    filename: "menu-cooking.jpg"
+  - description: "Efectos de Cocina - Partículas de humo y fuego"
+    filename: "cooking-effects.jpg"
+  - description: "Marcadores 3D en ubicaciones de cocina"
+    filename: "3d-markers.jpg"
+  - description: "Sistema de Niveles de Habilidad"
+    filename: "skill-levels.jpg"
+  - description: "Notificaciones Elegantes"
+    filename: "notifications.jpg"
+
+# Tags for discovery
+tags:
+  - "fivem"
+  - "roleplay"
+  - "esx"
+  - "qbcore"
+  - "cooking"
+  - "restaurant"
+  - "food"
+  - "esx-framework"
+  - "qb-core"
+  - "gta5"
+
+# Category
+category: "scripts"
+
+# Supported game versions
+game_versions:
+  - "gta5"
+
+# Changelog
+changelog:
+  - version: "1.0.0"
+    date: "2023-07-15"
+    changes:
+      - Versión inicial del sistema de cocina
+      - Soporte para ESX y QB-Core
+      - 7 recetas disponibles
+      - Sistema de niveles y experiencia
+      - Efectos visuales premium
+      - Sistema anti-cheat
+      - Soporte multi-idioma (ES/EN)
+
+# Support information
+support:
+  discord: "Emilio#1234"
+  email: "emilio@ranuk.dev"
+  documentation: "https://ranuk.dev/fivem-coccion"
+
+# Requirements
+requirements:
+  - name: "es_extended"
+    version: "1.2+"
+    optional: false
+    description: "ESX Framework (required for ESX servers)"
+  - name: "qb-core"
+    version: "3.0+"
+    optional: false
+    description: "QB-Core Framework (required for QB servers)"
+  - name: "ox_lib"
+    version: "3.0+"
+    optional: true
+    description: "Para barra de progreso mejorada (recomendado)"
+
+# Installation instructions
+installation:
+  - "Descarga el paquete comprado de Tebex"
+  - "Descomprime el archivo en tu directorio de recursos"
+  - "Renombra la carpeta a 'coccion'"
+  - "Copia la carpeta a 'resources/' en tu servidor FiveM"
+  - "Agrega 'ensure coccion' a tu archivo 'server.cfg'"
+  - "Reinicia tu servidor"
+  - "Configura 'config.lua' según tus necesidades"
+
+# Legal information
+legal:
+  license: "MIT"
+  copyright: "© 2023 Emilio Ranucoli / Ranuk IT Solutions"
+  terms: "Al comprar este recurso, aceptas los términos de uso y condiciones de venta"

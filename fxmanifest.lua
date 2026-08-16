@@ -1,26 +1,36 @@
-fx_version 'cerulean'
-lua54 'yes'
-
-game 'gta5'
-
+[fx_version]
+version '1.0.3-1'
 author 'Emilio Ranucoli'
-description 'FiveM resource for cooking system supporting ESX and QB-Core'
-version '1.0.0'
+description 'FiveM Cooking System for ESX/QB-Core'
 
-shared_scripts {
-    'config.lua',
-    'locales/en.json',
-    'locales/es.json',
-    'shared/main.lua',
+[dependencies]
+qb-core.lua
+esx
+ox_lib (>= 3.0.0)
+
+[client]
+files {
+    client/*.lua,
+    client/*.yml,
+    client/*.sc
 }
 
-client_scripts {
-    'client/main.lua',
-    'client/visuals.lua',
+[server]
+files {
+    server/*.lua,
+    data/*.lua
 }
 
-server_scripts {
-    'server/main.lua',
-    'server/anticheat.lua',
-    'server/webhook.lua',
-}
+[packages]
+mx-legacy = "*"
+qb-core = "*"
+esx = "*"
+osval = "*"
+
+[info]
+website "https://ranuk.dev"
+license "proprietary"
+
+[scripts]
+client = 'client/main.lua',
+server = 'server/main.lua'
