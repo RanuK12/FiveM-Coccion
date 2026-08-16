@@ -1,9 +1,5 @@
 # 🍳 FiveM-Coccion — Sistema de Cocina Profesional
 
-FiveM resource premium para sistema de cocina avanzado con soporte multi-framework (ESX y QB-Core), diseñado para servidores RolePlay que buscan inmersión y realismo en sus experiencias culinarias.
-
----
-
 ## ✨ Características Principales
 
 ### 🎮 Soporte Multi-Framework
@@ -38,8 +34,6 @@ FiveM resource premium para sistema de cocina avanzado con soporte multi-framewo
 - Progresión ajustable (exp por nivel, tiempo de cocción)
 - Traducciones completas (ES/EN)
 
----
-
 ## 📋 Requisitos
 
 | Requisito | Versión | Obligatorio |
@@ -50,8 +44,6 @@ FiveM resource premium para sistema de cocina avanzado con soporte multi-framewo
 | Sistema de inventario | — | Sí |
 | Sistema de jobs | — | Solo para recetas de chef |
 
----
-
 ## 🚀 Instalación
 
 1. Descargá el `.zip` de Tebex
@@ -59,21 +51,17 @@ FiveM resource premium para sistema de cocina avanzado con soporte multi-framewo
 3. Copiala en `resources/` de tu servidor FiveM
 4. Agregá `ensure coccion` a tu `server.cfg`
 5. Ejecutá el SQL en tu base de datos:
-
 ```sql
 CREATE TABLE IF NOT EXISTS coccion_player_data (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    identifier VARCHAR(60) NOT NULL,
-    level INT DEFAULT 1,
-    experience INT DEFAULT 0,
-    UNIQUE (identifier)
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  identifier VARCHAR(60) NOT NULL,
+  level INT DEFAULT 1,
+  experience INT DEFAULT 0,
+  UNIQUE (identifier)
 );
 ```
-
 6. Editá `config.lua` (framework, webhook de Discord, coordenadas de cocinas, recetas)
 7. Reiniciá el servidor
-
----
 
 ## 🍽️ Recetas Incluidas
 
@@ -86,8 +74,6 @@ CREATE TABLE IF NOT EXISTS coccion_player_data (
 | Pizza | 10 | 40 | dough, tomato_sauce, cheese, pepperoni | Sí — Chef rango 1 |
 | Filete | 15 | 50 | meat, salt, pepper, butter | Sí — Chef rango 2 |
 | Pastel | 20 | 75 | flour, sugar, eggs, butter, vanilla | Sí — Chef rango 3 |
-
----
 
 ## 💰 Licencias
 
@@ -106,15 +92,11 @@ CREATE TABLE IF NOT EXISTS coccion_player_data (
 - Soporte 24/7
 - Actualizaciones de por vida + personalización incluida
 
----
-
 ## 📞 Contacto
 
-**Desarrollador:** Emilio Ranucoli  
-**Email:** emilio@ranuk.dev  
-**Web:** [ranuk.dev](https://ranuk.dev)  
+**Desarrollador:** Emilio Ranucoli
+**Email:** emilio@ranuk.dev
+**Web:** [ranuk.dev](https://ranuk.dev)
 **Discord:** Emilio#1234
-
----
 
 *Gracias por comprar FiveM-Coccion. Cualquier duda, escribime.* 🍽️
