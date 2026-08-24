@@ -25,3 +25,8 @@ shared_scripts {
     'config.lua',
     'shared/main.lua'
 }
+
+files {
+    'locales/en.json',
+    'locales/es.json'
+}
