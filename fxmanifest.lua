@@ -8,7 +8,7 @@ author 'RanuK12'
 
 description 'FiveM Cooking Resource'
 
-version '1.0.0'
+version '1.0.1'
 
 client_scripts {
     'client/main.lua',
@@ -29,4 +29,8 @@ shared_scripts {
 files {
     'locales/en.json',
     'locales/es.json'
+}
+dependencies {
+    ".esx",
+    ".qb-core"
 }
