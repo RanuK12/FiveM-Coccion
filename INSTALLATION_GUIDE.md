@@ -25,16 +25,20 @@
 4. **Database Setup**
    - Execute the SQL script `sql/init.sql` in your MySQL database.
    - This creates the `coccion_player_data` table and sample data.
+   - **Verification**: Run `SELECT * FROM coccion_player_data;` to confirm table creation.
 
 5. **Configure Framework**
    - Open `config.lua` and set `Config.Framework` to `'esx'` or `'qbcore'`.
    - Adjust `Config.Discord.WebhookURL` if you want logging.
+   - **Framework-specific notes**:
+     - **ESX**: Ensure `esx_data` table exists
+     - **QB-Core**: Verify `players` table structure
 
 6. **Start the Server**
    - Restart your FiveM server to load the resource.
+   - **Check logs**: `tail -f /path/to/fivem/server.log` to verify resource load
 
 ## 📦 Release Package
-
 The release package includes:
 - `client/` - Client-side scripts and visuals
 - `server/` - Server-side logic and database handling
@@ -44,7 +48,6 @@ The release package includes:
 - `fxmanifest.lua` - Resource manifest
 
 ## 🧪 Verified SQL Script
-
 The `sql/init.sql` script:
 - Creates `coccion_player_data` table with proper indexes
 - Includes sample data for testing
@@ -54,3 +57,9 @@ The `sql/init.sql` script:
 All files are correctly declared in `fxmanifest.lua`:
 - Client: `client/*.lua`, `client/*.yml`, `client/*.sc`
 - Server: `server/*.lua`, `data/*.lua`
+
+## 🛡️ Troubleshooting
+- **Resource fails to load**: Check `server.cfg` for correct path and `ensure` line
+- **Database errors**: Verify MySQL credentials and permissions
+- **Framework issues**: Ensure required framework version matches
+- **Missing files**: Confirm all files from the release zip are present
