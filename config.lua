@@ -1,6 +1,12 @@
 Config = {}
 
-Config.Framework = 'esx' -- Options: 'esx', 'qbcore'
+-- Framework selection: 'esx' or 'qbcore'
+Config.Framework = 'esx'
+
+-- Language / Locale for the resource (e.g., 'en', 'es', 'it')
+Config.Locale = 'es'
+
+-- Enable debug mode (prints extra logs)
 Config.Debug = false
 
 -- Framework specific settings
@@ -20,7 +26,18 @@ Config.QBCore = {
     end
 }
 
--- Cooking settings
+-- Economy settings
+Config.Economy = {
+    Currency = '$', -- Currency symbol
+    Tax = 0.1,      -- Tax rate (10%)
+}
+
+-- Permissions settings
+Config.Permissions = {
+    -- ACE permission for the cooking command
+    Command = 'command.coccion'
+}
+
 -- Discord webhook for logging
 Config.Discord = {
     Enabled = true,
@@ -86,12 +103,13 @@ Config.Visuals = {
     }
 }
 
+-- Cooking settings
 Config.Cooking = {
     MinLevel = 1,
     ExperiencePerCook = 10,
     MaxLevel = 100,
     CookingTime = 5000, -- ms
-    Progress bar settings
+    -- Progress bar settings
     ProgressBar = {
         Enabled = true,
         Type = 'ox_lib', -- Options: 'ox_lib', 'esx', 'qbcore'
@@ -110,7 +128,9 @@ Config.Cooking = {
             cooking_time = 5000,
             job_required = false,
             job_name = nil,
-            job_grade = nil
+            job_grade = nil,
+            cost = 5,   -- Cost to make
+            price = 15  -- Price to sell
         },
         ['burger'] = {
             name = 'Burger',
@@ -120,7 +140,9 @@ Config.Cooking = {
             cooking_time = 7000,
             job_required = false,
             job_name = nil,
-            job_grade = nil
+            job_grade = nil,
+            cost = 8,
+            price = 20
         },
         ['pizza'] = {
             name = 'Pizza',
@@ -130,7 +152,9 @@ Config.Cooking = {
             cooking_time = 10000,
             job_required = true,
             job_name = 'chef',
-            job_grade = 1
+            job_grade = 1,
+            cost = 10,
+            price = 25
         },
         ['steak'] = {
             name = 'Steak',
@@ -140,7 +164,9 @@ Config.Cooking = {
             cooking_time = 12000,
             job_required = true,
             job_name = 'chef',
-            job_grade = 2
+            job_grade = 2,
+            cost = 15,
+            price = 35
         },
         ['soup'] = {
             name = 'Soup',
@@ -150,7 +176,9 @@ Config.Cooking = {
             cooking_time = 6000,
             job_required = false,
             job_name = nil,
-            job_grade = nil
+            job_grade = nil,
+            cost = 4,
+            price = 12
         },
         ['salad'] = {
             name = 'Salad',
@@ -160,7 +188,9 @@ Config.Cooking = {
             cooking_time = 4000,
             job_required = false,
             job_name = nil,
-            job_grade = nil
+            job_grade = nil,
+            cost = 3,
+            price = 10
         },
         ['cake'] = {
             name = 'Cake',
@@ -170,7 +200,9 @@ Config.Cooking = {
             cooking_time = 15000,
             job_required = true,
             job_name = 'chef',
-            job_grade = 3
+            job_grade = 3,
+            cost = 12,
+            price = 30
         }
     }
 }
