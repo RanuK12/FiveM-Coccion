@@ -1,0 +1,12 @@
+
+# 2026-09-04 17:22:19.102128
++Create a new config.lua that centralizes all configurable values: Framework, Locale, Cocinas (coords from Visuals.Locations), Tiempos (cooking times from recipes and Config.Cooking.CookingTime), Precios (placeholder empty), Permisos (job/grade from recipes and Min/Max levels), Features (toggles from Discord, AntiCheat, Visuals.Particles, Cooking.ProgressBar). Then replace all hardcoded literals in client/main.lua, client/visuals.lua, server/main.lua, server/anticheat.lua, server/webhook.lua with references to Config.X, preserving logic.
+
+# 2026-09-04 17:22:19.102843
++Create a new config.lua that centralizes all configurable values: Framework, Locale, Cocinas (coords from Visuals.Locations), Tiempos (cooking times from recipes and Config.Cooking.CookingTime), Precios (placeholder empty), Permisos (job/grade from recipes and Min/Max levels), Features (toggles from Discord, AntiCheat, Visuals.Particles, Cooking.ProgressBar). Then replace all hardcoded literals in client/main.lua, client/visuals.lua, server/main.lua, server/anticheat.lua, server/webhook.lua with references to Config.X, preserving logic.
+
+# 2026-09-04 23:28:15.892149
++Transform the config.lua into a fully configurable and commented version. Add sections for Framework, Locale, Debug, ESX, QBCore, Discord, AntiCheat, Visuals, Cooking, Economy, and Permissions. Ensure every setting is commented. Fix the progress bar line by moving the comment properly. Add missing settings like Locale, Economy (with currency and tax), and Permissions. Also add cost and price to each recipe. Do not change the structure of the existing sections, just add comments and the missing sections.
+
+# 2026-09-04 23:28:15.892713
++Transform the config.lua into a fully configurable and commented version. Add sections for Framework, Locale, Debug, ESX, QBCore, Discord, AntiCheat, Visuals, Cooking, Economy, and Permissions. Ensure every setting is commented. Fix the progress bar line by moving the comment properly. Add missing settings like Locale, Economy (with currency and tax), and Permissions. Also add cost and price to each recipe. Do not change the structure of the existing sections, just add comments and the missing sections.
