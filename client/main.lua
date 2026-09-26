@@ -76,7 +76,7 @@ function showCookingMenu()
         if canCook then
             local description = _U('cooking.level_required') .. ": " .. recipeData.level_required .. 
                               " | " .. _U('cooking.experience') .. ": " .. recipeData.experience .. 
-                              " | " .. _U('cooking.time') .. ": " .. (recipeData.cooking_time / 1000) .. "s"
+                              " | " .. _U('cooking.time') .. ": " .. (recipeData.cooking_time / Config.Cooking.ProgressBar.Divisor) .. "s"
             
             table.insert(elements, {
                 title = recipeData.name,
@@ -140,12 +140,12 @@ function showCookingMenu()
     else
         -- Fallback for other frameworks
         local title = _U('cooking.title')
-        local message = "Available recipes:\n\n"
+        local message = Config.Messages.AvailableRecipesHeader
         
         for _, element in ipairs(elements) do
             if element.value ~= 'close' then
                 local isDisabled = element.value:sub(-9) == '_disabled'
-                local status = isDisabled and " (Cannot cook)" or ""
+                local status = isDisabled and Config.Messages.CannotCookSuffix or ""
                 message = message .. element.title .. status .. "\n"
             end
         end
@@ -233,9 +233,9 @@ function startCooking(recipeName)
     
     -- Start cooking thread
     cookingThread = Citizen.CreateThread(function()
-        local incrementTime = recipe.cooking_time / 100 -- 100 steps for progress
+        local incrementTime = recipe.cooking_time / Config.Cooking.ProgressBar.Steps
         
-        while currentCooking and cookingProgress < 100 do
+        while currentCooking and cookingProgress < Config.Cooking.ProgressBar.Max do
             Citizen.Wait(incrementTime)
             cookingProgress = cookingProgress + 1
             
@@ -244,7 +244,7 @@ function startCooking(recipeName)
                 exports.ox_lib:progression(progressBar, math.floor(cookingProgress))
             end
             
-            if cookingProgress >= 100 then
+            if cookingProgress >= Config.Cooking.ProgressBar.Max then
                 -- Cooking completed
                 currentCooking = false
                 cookingProgress = 0
@@ -300,9 +300,9 @@ function showProgressBar(recipe)
                 clip = 'mp_player_int_eat_burger'
             },
             prop = {
-                model = `prop_cs_plate_01`,
-                pos = vec3(0.020000, 0.020000, -0.020000),
-                rot = vec3(0.000000, 0.000000, 0.000000)
+                model = Config.Props.Plate.Model,
+                pos = vec3(Config.Props.Plate.Position[1], Config.Props.Plate.Position[2], Config.Props.Plate.Position[3]),
+                rot = vec3(Config.Props.Plate.Rotation[1], Config.Props.Plate.Rotation[2], Config.Props.Plate.Rotation[3])
             }
         })
         
@@ -320,7 +320,7 @@ function showProgressBar(recipe)
     else
         -- Use framework-specific progress bar
         if Config.Framework == 'esx' then
-            ESX.ShowProgressBar(recipe.cooking_time / 1000, 'Cooking ' .. recipe.name)
+            ESX.ShowProgressBar(recipe.cooking_time / Config.Cooking.ProgressBar.Divisor, 'Cooking ' .. recipe.name)
         elseif Config.Framework == 'qbcore' then
             QBCore.Functions.Progressbar('cooking', 'Cooking ' .. recipe.name, recipe.cooking_time, false, true, {
                 disableMovement = true,

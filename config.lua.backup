@@ -40,28 +40,6 @@ Config.EnableHungerThirst = true   -- Afecta hambre/sed al comer
 Config.EnableEffects    = true   -- Efectos visuales/sónicos al cocinar
 Config.EnableDebug      = false  -- Logs de debug en consola
 
--- Mensajes mostrados al jugador
-Config.Messages = {
-  AvailableRecipesHeader = "Available recipes:\n\n",
-  CannotCookSuffix = " (Cannot cook)"
-}
-
--- Configuración de la barra de progreso
-Config.Cooking.ProgressBar = {
-  Steps = 100,           -- Número total de pasos para completar la barra
-  Max = 100,             -- Valor máximo de la barra (porcentaje)
-  Divisor = 1000         -- Divisor usado para calcular el progreso (tiempo en ms / divisor)
-}
-
--- Modelo y posición del prop del plato
-Config.Props = {
-  Plate = {
-    Model = `prop_cs_plate_01`,  -- Hash del modelo del prop
-    Position = {0.02, 0.02, -0.02},  -- Posición relativa al jugador (x, y, z)
-    Rotation = {0.0, 0.0, 0.0}       -- Rotación del prop (pitch, roll, yaw)
-  }
-}
-
 --[[=====================================================================
     FIN DE CONFIGURACIÓN
 ===================================================================]]
