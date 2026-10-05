@@ -1,54 +1,48 @@
---[[=====================================================================
-  fivem-coccion – Configuración central
-  Cada opción está documentada línea a línea.
-  No modifiques nada fuera de este archivo.
-=====================================================================]]--
+--[[
+    fivem-coccion – Configuración centralizada
+    Todos los valores modificables están aquí; ningún número mágico en client/ o server/.
+]]
 
-Config = {}
+-- Framework: "esx" o "qb"
+Config.Framework = "esx"
 
--- 1️⃣ Framework -----------------------------------------------------------
--- Elige el framework que usa tu servidor: "esx" o "qbcore"
-Config.Framework = "esx"   -- "esx" | "qbcore"
+-- Idioma de los locales (es, en, etc.)
+Config.Locale = "es"
 
--- 2️⃣ Idioma --------------------------------------------------------------
--- Idioma por defecto. Los archivos de locales están en `locales/`.
-Config.Locale = "es"       -- "es", "en", "fr", ...
-
--- 3️⃣ Coordenadas de los puntos de cocina ---------------------------------
--- Cada punto es un vector3(x, y, z). Añade o elimina según tu mapa.
+-- Coordenadas de las estaciones de cocina (vector3)
 Config.CookingStations = {
-  { x = 123.45, y = -456.78, z = 78.90 },   -- ejemplo 1
-  -- { x = ..., y = ..., z = ... },        -- ejemplo 2 (descomenta para usar)
+    { x = 110.0, y = -1580.0, z = 30.0 },
+    { x = -560.0, y = 285.0, z = 82.0 }
 }
 
--- 4️⃣ Tiempos (en milisegundos) -------------------------------------------
+-- Tiempo (en segundos) para cada acción
 Config.Times = {
-  prep   = 5000,   -- tiempo de preparación
-  cook   = 15000,  -- tiempo de cocción
-  serve  = 3000,   -- tiempo de entrega
+    Chop = 5,
+    Mix  = 8,
+    Cook = 12
 }
 
--- 5️⃣ Precios -------------------------------------------------------------
--- Precio que paga el jugador por cada receta.
+-- Precio de venta de cada plato (en dinero del servidor)
 Config.Prices = {
-  burger = 25,
-  pizza  = 40,
-  taco   = 30,
+    Hamburger = 150,
+    Pizza     = 200,
+    Salad     = 100
 }
 
--- 6️⃣ Permisos ------------------------------------------------------------
--- Grupo de permisos necesario para usar la cocina.
-Config.Permission = "cocina.use"   -- usa tu sistema de permisos (ACE, ESX, etc.)
+-- Permisos requeridos para usar la cocina (acepta grupos ESX o jobs QB)
+Config.Permissions = {
+    esx = "chef",
+    qb  = "chef"
+}
 
--- 7️⃣ Toggles de funcionalidades -----------------------------------------
+-- Toggles de cada feature (true = activado)
 Config.Features = {
-  enableCooking   = true,   -- activar/desactivar todo el sistema
-  enableDelivery  = true,   -- activar entregas a clientes
-  enableInventory = true,   -- usar inventario del framework
+    EnableChopping   = true,
+    EnableMixing     = true,
+    EnableCooking    = true,
+    EnableDelivery   = false,
+    EnableNotifications = true
 }
 
--- 8️⃣ Mensajes personalizables (se cargan desde locales, pero puedes sobrescribir)
-Config.Messages = {
-  notEnoughMoney = "No tienes suficiente dinero.",
-  cookingStart   = "Has comenzado a cocinar %s.",
-}
+-- Otros ajustes globales
+Config.Debug = false   -- true para logs detallados en consola
