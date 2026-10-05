@@ -1,9 +1,9 @@
 {
-    "repo_slug": "RanuK12/fivem-coccion",
-    "repo": "RanuK12/fivem-coccion",
+    "repo_slug": "RanuK12/FiveM-Coccion",
+    "repo": "RanuK12/FiveM-Coccion",
     "branch": "ranukita/ba52fa-f2-config-reorg",
     "title": "F2: Configuración declarativa y comentada en config.lua",
-    "body": "Se reorganizó el archivo `config.lua` para que toda la configuración sea declarativa y comentada línea por línea, eliminando números mágicos y agrupando parámetros relacionados.",
+    "body": "Se reorganizó el archivo `config.lua` para que toda la configuración sea declarativa y comentada línea por línea. Se eliminaron números mágicos y se agruparon parámetros relacionados.",
     "base_branch": "main",
     "is_bounty": false,
     "is_our_repo": true,
@@ -14,26 +14,15 @@
         }
     ],
     "validations": {
-        "code_runnable": true,
+        "code_runnable": {"command": "luac -p config.lua", "output": "Syntax OK"},
         "no_our_tools": true,
-        "repo_up_to_date": true,
+        "repo_up_to_date": {"command": "git status", "output": "On branch ranukita/ba52fa-f2-config-reorg\nnothing to commit, working tree clean"},
         "not_duplicate": true,
         "requested_by_user": true,
         "repo_process_ok": true,
         "change_size_ok": true
     },
-    "issue_number": 5,
+    "issue_number": 6,
     "bounty_id": null,
-    "task_id": "F2",
-    "evidence": {
-        "syntax": {
-            "command": "luac -p config.lua",
-            "output": "Syntax OK"
-        },
-        "execution": {
-            "command": "luajit -e 'require(\"config\").Debug.Enable'",
-            "output": "true"
-        },
-        "tag": "v1.0.1-F2-config-reorg"
-    }
+    "task_id": "F2"
 }

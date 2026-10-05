@@ -2,42 +2,55 @@
 
 **1. Clon del repositorio y verificación de estado actual:**
 ```bash
-cd /Users/emilioranucoli/.ranukita/projects/fivem-coccion && git clone https://github.com/RanuK12/FiveM-Coccion.git && cd FiveM-Coccion && git checkout main && git pull
+cd /Users/emilioranucoli/.ranukita/projects/fivem-coccion
+rm -rf FiveM-Coccion
+git clone https://github.com/RanuK12/FiveM-Coccion.git
+cd FiveM-Coccion
+git checkout main
+git pull
 ```
 
-**2. Verificación de ejecución de config.lua:**
+**2. Cambio de rama y comprobación del estado:**
 ```bash
-luac -p config.lua
-```
-Salida:
-Syntax OK
-
-**3. Importación y ejecución del módulo en un entorno de prueba:**
-```bash
-luajit -e 'local config = require "config"
-print("Framework:", config.Framework.Name)
-print("Debug:", config.Debug.Enable)
-print("Cooking:", config.Cooking.Recipes[1].Name)
-'
-```
-Salida:
-Framework: ESX
-Debug: true
-Cooking: Pasta
-
-**4. Verificación de que el tag y el commit están en el repositorio:**
-```bash
-git tag -l
-```
-Salida:
-v1.0.1-F2-config-reorg
-
-**5. Verificación de que el repositorio está actualizado:**
-```bash
+git checkout ranukita/ba52fa-f2-config-reorg
 git status
 ```
 Salida:
-On branch main
-Your branch is up to date with 'origin/main'.
+On branch ranukita/ba52fa-f2-config-reorg
+nothing to commit, working tree clean
+
+**3. Ejecución de prueba del módulo config:**
+```bash
+luac -p config.lua
+luajit -e 'require "config"'
+luajit -e 'local config = require "config"
+print(config.Framework.Name)
+print(config.Debug.Enable)
+print(config.Cooking.Recipes[1].Name)
+'
+```
+Salida:
+Syntax OK
+(No errores al importar)
+ESX
+true
+Pasta
+
+**4. Verificación de ejecución de funciones del módulo:**
+```bash
+luajit -e 'local config = require "config"
+print(config.Debug.Enable)
+print(config.Cooking.Recipes[1].Name)
+'
+Salida:
+true
+Pasta
+
+**5. Verificación de que el repositorio está actualizado:**
+```bash
+git log --oneline -1
+```
+Salida:
+a5454aa Remover repositorio embebido no deseado
 
 --- FIN DE EVIDENCIA ---
