@@ -4,6 +4,8 @@
   No modifiques nada fuera de este archivo.
 =====================================================================]]--
 
+Config = {}
+
 -- 1️⃣ Framework -----------------------------------------------------------
 -- Elige el framework que usa tu servidor: "esx" o "qbcore"
 Config.Framework = "esx"   -- "esx" | "qbcore"
