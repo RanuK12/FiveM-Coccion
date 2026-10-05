@@ -2,7 +2,15 @@
 -- FRAMEWORK CONFIGURATION
 -- ============================================
 -- Selecciona el framework a usar: 'esx' o 'qbcore'.
-Config.Framework = 'esx' -- Cambiar a 'qbcore' si usas QB-Core
+Config = {}
+Config.Framework = {
+    Name = "ESX", -- "ESX" or "QB-Core"
+    Permissions = {
+        Admin = "admin",
+        Chef = "chef",
+        Cook = "cook"
+    }
+}
 
 -- ============================================
 -- DEBUG MODE
@@ -102,75 +110,61 @@ Config.Cooking = {
     
     -- Configuración de las recetas disponibles
     Recipes = {
-        ['pasta'] = {
-            name = 'Pasta',
-            ingredients = { 'pasta', 'tomato_sauce' },
-            level_required = 1,
-            experience = 15,
-            cooking_time = 5000,
-            job_required = false,
-            job_name = nil,
-            job_grade = nil
+        {
+            Name = "Pasta",
+            Ingredients = {"harina", "agua", "sal"},
+            Level = 1,
+            Time = 30,
+            Price = 50,
+            Job = "chef"
         },
-        ['burger'] = {
-            name = 'Burger',
-            ingredients = { 'bread', 'meat', 'lettuce', 'tomato' },
-            level_required = 5,
-            experience = 25,
-            cooking_time = 7000,
-            job_required = false,
-            job_name = nil,
-            job_grade = nil
+        {
+            Name = "Pizza",
+            Ingredients = {"harina", "queso", "carne"},
+            Level = 2,
+            Time = 60,
+            Price = 80,
+            Job = "chef"
         },
-        ['pizza'] = {
-            name = 'Pizza',
-            ingredients = { 'dough', 'tomato_sauce', 'cheese', 'pepperoni' },
-            level_required = 10,
-            experience = 40,
-            cooking_time = 10000,
-            job_required = true,
-            job_name = 'chef',
-            job_grade = 1
+        {
+            Name = "Hamburguesa",
+            Ingredients = {"pan", "carne", "verdura"},
+            Level = 1,
+            Time = 45,
+            Price = 60,
+            Job = "cook"
         },
-        ['steak'] = {
-            name = 'Steak',
-            ingredients = { 'meat', 'salt', 'pepper', 'butter' },
-            level_required = 15,
-            experience = 50,
-            cooking_time = 12000,
-            job_required = true,
-            job_name = 'chef',
-            job_grade = 2
+        {
+            Name = "Ensalada",
+            Ingredients = {"verdura", "agua"},
+            Level = 1,
+            Time = 15,
+            Price = 30,
+            Job = "cook"
         },
-        ['soup'] = {
-            name = 'Soup',
-            ingredients = { 'vegetables', 'water', 'salt', 'herbs' },
-            level_required = 3,
-            experience = 20,
-            cooking_time = 6000,
-            job_required = false,
-            job_name = nil,
-            job_grade = nil
+        {
+            Name = "Bistec",
+            Ingredients = {"carne", "sal", "mantequilla"},
+            Level = 3,
+            Time = 90,
+            Price = 120,
+            Job = "chef"
         },
-        ['salad'] = {
-            name = 'Salad',
-            ingredients = { 'lettuce', 'tomato', 'cucumber', 'olive_oil' },
-            level_required = 2,
-            experience = 18,
-            cooking_time = 4000,
-            job_required = false,
-            job_name = nil,
-            job_grade = nil
+        {
+            Name = "Sopa",
+            Ingredients = {"verdura", "agua", "sal"},
+            Level = 2,
+            Time = 40,
+            Price = 45,
+            Job = "cook"
         },
-        ['cake'] = {
-            name = 'Cake',
-            ingredients = { 'flour', 'sugar', 'eggs', 'butter', 'vanilla' },
-            level_required = 20,
-            experience = 75,
-            cooking_time = 15000,
-            job_required = true,
-            job_name = 'chef',
-            job_grade = 3
+        {
+            Name = "Pastel",
+            Ingredients = {"harina", "azucar", "huevo", "leche"},
+            Level = 4,
+            Time = 120,
+            Price = 150,
+            Job = "chef"
         }
     }
 }
