@@ -1,59 +1,54 @@
-Config = {}
+-- ============================================
+-- FRAMEWORK CONFIGURATION
+-- ============================================
+-- Selecciona el framework a usar: 'esx' o 'qbcore'.
+Config.Framework = 'esx' -- Cambiar a 'qbcore' si usas QB-Core
 
-Config.Framework = 'esx' -- Options: 'esx', 'qbcore'
+-- ============================================
+-- DEBUG MODE
+-- ============================================
+-- Activa logs detallados para desarrollo y depuración.
 Config.Debug = false
 
--- Framework specific settings
-Config.ESX = {
-    CoreExport = 'es_extended',
-    GetPlayer = function(source)
-        local ESX = exports[Config.ESX.CoreExport]:getSharedObject()
-        return ESX.GetPlayerFromId(source)
-    end
-}
-
-Config.QBCore = {
-    CoreExport = 'qb-core',
-    GetPlayer = function(source)
-        local QBCore = exports[Config.QBCore.CoreExport]:GetCoreObject()
-        return QBCore.Functions.GetPlayer(source)
-    end
-}
-
--- Cooking settings
--- Discord webhook for logging
+-- ============================================
+-- DISCORD LOGGING
+-- ============================================
+-- Configuración para enviar logs a Discord.
 Config.Discord = {
     Enabled = true,
-    WebhookURL = '', -- Set your Discord webhook URL here
-    LogCooking = true,       -- Log cooking attempts
-    LogLevelUp = true,       -- Log level ups
-    LogCheatAttempts = true, -- Log cheat attempts
+    WebhookURL = '', -- URL del webhook de Discord
+    LogCooking = true,       -- Log de intentos de cocción
+    LogLevelUp = true,       -- Log de ascensos de nivel
+    LogCheatAttempts = true, -- Log de intentos de cheat
     LogColor = 0x00d4ff,     -- Cyan
     CheatColor = 0xff0000,   -- Red
     LevelUpColor = 0xffd700  -- Gold
 }
 
--- Anti-cheat settings
+-- ============================================
+-- ANTI-CHEAT SETTINGS
+-- ============================================
 Config.AntiCheat = {
     Enabled = true,
-    CooldownBetweenCooks = 3000, -- ms minimum between cook attempts (anti-spam)
-    MaxCookingDistance = 3.0,    -- meters from cooking marker
-    VerifyIngredients = true,    -- server-side ingredient check
-    LogCheatAttempts = true
+    CooldownBetweenCooks = 3000, -- Tiempo mínimo entre intentos de cocción (anti-spam, en milisegundos)
+    MaxCookingDistance = 3.0,    -- Distancia máxima permitida desde el marcador de cocina (en metros)
+    VerifyIngredients = true,    -- Verificación de ingredientes en el servidor
+    LogCheatAttempts = true     -- Registrar intentos de cheat
 }
 
--- Visual settings
+-- ============================================
+-- VISUAL SETTINGS
+-- ============================================
 Config.Visuals = {
-    -- Cooking locations (blips + markers)
     Locations = {
-        { name = 'Restaurant Kitchen', coords = vector3(298.5, -1296.2, 29.4), blip = 93, blipColor = 47 },
-        { name = 'Vespucci Kitchen', coords = vector3(-1135.0, -1538.0, 4.4), blip = 93, blipColor = 47 },
-        { name = 'Sandy Shores Diner', coords = vector3(1961.0, 3741.0, 32.3), blip = 93, blipColor = 47 },
+        { name = 'Restaurant Kitchen', coords = { x = 250.0, y = 250.0, z = 100.0 }, blip = 93, blipColor = 47 },
+        { name = 'Vespucci Kitchen', coords = { x = -1135.0, y = -1538.0, z = 4.4 }, blip = 93, blipColor = 47 },
+        { name = 'Sandy Shores Diner', coords = { x = 1961.0, y = 3741.0, z = 32.3 }, blip = 93, blipColor = 47 }
     },
     Marker = {
-        Type = 1, -- cylinder
-        Scale = vector3(1.0, 1.0, 0.5),
-        Color = { r = 0, g = 212, b = 255, a = 150 }, -- cyan
+        Type = 1, -- Tipo de marcador (cilindro)
+        Scale = { x = 1.0, y = 1.0, z = 0.5 },
+        Color = { r = 0, g = 212, b = 255, a = 150 }, -- Cian
         BobUpDown = true,
         FaceCamera = false,
         Rotate = true
@@ -63,45 +58,50 @@ Config.Visuals = {
         Smoke = {
             Dict = 'core',
             Name = 'exp_grd_flare',
-            Offset = vector3(0.0, 0.0, 0.8),
+            Offset = { x = 0.0, y = 0.0, z = 0.8 },
             Scale = 0.5
         },
         Fire = {
             Dict = 'core',
             Name = 'ent_amb_fire',
-            Offset = vector3(0.0, 0.0, 0.6),
+            Offset = { x = 0.0, y = 0.0, z = 0.6 },
             Scale = 0.3
         },
         Done = {
             Dict = 'scr_rcbarry2',
             Name = 'scr_clown_bullets',
-            Offset = vector3(0.0, 0.0, 1.0),
+            Offset = { x = 0.0, y = 0.0, z = 1.0 },
             Scale = 0.6
         }
     },
     Animation = {
         Dict = 'anim@amb@business@coc@coc_unpack_cut@',
         Name = 'fullcut_cycle_c6a_cokeboard',
-        Duration = 4000 -- loop
+        Duration = 4000 -- Duración de la animación
     }
 }
 
+-- ============================================
+-- COOKING SETTINGS
+-- ============================================
 Config.Cooking = {
-    MinLevel = 1,
-    ExperiencePerCook = 10,
-    MaxLevel = 100,
-    CookingTime = 5000, -- ms
-    Progress bar settings
+    MinLevel = 1, -- Nivel mínimo para empezar
+    MaxLevel = 100, -- Nivel máximo alcanzable
+    ExperiencePerCook = 10, -- Experiencia otorgada por cada cocción
+    CookingTime = 5000, -- Tiempo de cocción en milisegundos
+    
+    -- Configuración de la barra de progreso
     ProgressBar = {
         Enabled = true,
-        Type = 'ox_lib', -- Options: 'ox_lib', 'esx', 'qbcore'
-        Position = 'middle', -- Options: 'middle', 'bottom'
-        Color = '#00d4ff', -- Hex color
+        Type = 'ox_lib', -- Opciones: 'ox_lib', 'esx', 'qbcore'
+        Position = 'middle', -- Opciones: 'middle', 'bottom'
+        Color = '#00d4ff', -- Color en hexadecimal
         Width = 300,
         Height = 20
     },
+    
+    -- Configuración de las recetas disponibles
     Recipes = {
-        -- Basic recipes
         ['pasta'] = {
             name = 'Pasta',
             ingredients = { 'pasta', 'tomato_sauce' },
