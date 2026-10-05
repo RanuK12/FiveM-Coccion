@@ -100,3 +100,5 @@ CREATE TABLE IF NOT EXISTS coccion_player_data (
 **Discord:** Emilio#1234
 
 *Gracias por comprar FiveM-Coccion. Cualquier duda, escribime.* 🍽️
+## Configuración
+Todas las opciones del recurso están centralizadas en `config.lua`. Edita este archivo y reinicia el recurso para aplicar cambios.
