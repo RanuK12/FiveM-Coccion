@@ -3,6 +3,9 @@
     Todos los valores modificables están aquí; ningún número mágico en client/ o server/.
 ]]
 
+-- Ensure Config table exists (safe for standalone testing)
+if Config == nil then Config = {} end
+
 -- Framework: "esx" o "qb"
 Config.Framework = "esx"
 
