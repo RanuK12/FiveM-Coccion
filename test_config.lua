@@ -1,0 +1,10 @@
+-- Test that config loads and prints values
+dofile('config.lua')
+print('Framework:', Config.Framework)
+print('Locale:', Config.Locale)
+print('CookingStations[1]:', Config.CookingStations[1].x, Config.CookingStations[1].y, Config.CookingStations[1].z)
+print('Times.prep:', Config.Times.prep)
+print('Prices.burger:', Config.Prices.burger)
+print('Permission:', Config.Permission)
+print('Features.enableCooking:', Config.Features.enableCooking)
+print('Messages.notEnoughMoney:', Config.Messages.notEnoughMoney)
