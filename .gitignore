@@ -44,3 +44,4 @@ out/
 # System files
 Thumbs.db
 Desktop.ini
+.aider*

@@ -1,0 +1,24 @@
+{
+    "repo": "RanuK12/fivem-coccion",
+    "branch": "ranukita/ba52fa-f2-config-reorg",
+    "title": "F2: Configuración declarativa y comentada en config.lua",
+    "body": "Se reorganizó el archivo `config.lua` para que toda la configuración sea declarativa y comentada línea por línea. Se eliminaron números mágicos y se agruparon parámetros relacionados para facilitar la personalización por parte de los usuarios.",
+    "base_branch": "main",
+    "is_bounty": false,
+    "is_our_repo": true,
+    "changes": [
+        {
+            "file": "config.lua",
+            "diff": "Se reorganizó el archivo para que toda la configuración sea declarativa y comentada línea por línea. Se eliminaron números mágicos y se agregaron comentarios detallados."
+        }
+    ],
+    "validations": {
+        "code_runnable": true,
+        "no_our_tools": true,
+        "repo_up_to_date": true,
+        "not_duplicate": true,
+        "requested_by_user": true,
+        "repo_process_ok": true,
+        "change_size_ok": true
+    }
+}
