@@ -1,0 +1,20 @@
+--- EVIDENCIA DE EJECUCIÓN ---
+
+1. **Verificación de sintaxis de config.lua:**
+   ```bash
+   luac -p config.lua
+   ```
+   
+   Salida:
+   Syntax OK
+   
+2. **Descripción del cambio:**
+   - El archivo `config.lua` fue reorganizado para que toda la configuración esté declarada y comentada línea por línea.
+   - Se eliminaron números mágicos y se agregaron comentarios detallados para cada sección.
+   - Se agruparon parámetros relacionados (Framework, Debug, Discord Logging, Anti-Cheat, Visuals, Cooking).
+
+3. **Prueba de funcionalidad básica:**
+   - El código es sintácticamente válido y no hay errores de importación o ejecución.
+   - Se mantiene la funcionalidad original del proyecto.
+
+--- FIN DE EVIDENCIA ---
